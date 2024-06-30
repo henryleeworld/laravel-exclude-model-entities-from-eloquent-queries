@@ -10,15 +10,15 @@ class ArticlesController extends Controller
     public function exclude() 
     {
         $article = Article::query()->findOrFail(1);
-        echo '取得文章編號：' . $article->id . PHP_EOL;
+        echo __('Get article ID:') . $article->id . PHP_EOL;
         $article->addToExclusion();
         if ($article->excluded()) {
-            echo '將文章編號：' . $article->id . ' ' . '設定排除' . PHP_EOL;
+            echo __('Exclude article ID: :id', ['id' => $article->id]) . PHP_EOL;
         }
         try {
             Article::findOrFail(1);
         } catch (Exception $e) {
-            echo '文章編號：' . $article->id . ' ' . '無法取得' . PHP_EOL;
+            echo __('Article ID: :id', ['id' => $article->id]) . ' ' . __('cannot be obtained') . PHP_EOL;
         }
     }
 }

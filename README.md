@@ -1,4 +1,4 @@
-# Laravel 10 從 Eloquent 查詢中排除模型實體
+# Laravel 11 從 Eloquent 查詢中排除模型實體
 
 引入 maize-tech 的 laravel-excludable 套件來擴增從 Eloquent 查詢中排除模型實體，將能夠覆寫預設排除模型及其關聯的遷移，因此您最終可以通過定義應有效排除子集合的實體來限制排除上下文。
 
@@ -26,5 +26,5 @@ $ php artisan migrate --seed
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/OnFlNAH.png)
+![](https://i.imgur.com/7vkbpIp.png)
 > 隱藏指定實體的子集合

@@ -6,16 +6,25 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
     {
         Schema::create('exclusions', function (Blueprint $table) {
             $table->id();
-            $table->morphs('excludable');
+            $table->string('type');
+            $table->string('excludable_type');
+            $table->string('excludable_id');
+            $table->index(["excludable_type", "excludable_id"]);
             $table->timestamps();
         });
     }
 
-    public function down()
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
     {
         Schema::dropIfExists('exclusions');
     }
